@@ -45,7 +45,9 @@
 
 ### scope（スコープ）
 
-影響を受けるnpmパッケージ名を記載します。
+scope はチームやプロジェクトに合わせて決めます。
+
+Angular 風に運用する場合の例:
 
 ```sh
 animations | bazel | benchpress | common | compiler | compiler-cli | core |
