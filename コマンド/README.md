@@ -11,12 +11,14 @@ Gitコマンドを用途別にまとめています。
 | [取り消し操作](./取り消し操作.md) | `restore`, `reset`, `revert`, `commit --amend`, push前後の判断 |
 | [履歴の書き換え](./履歴の書き換え.md) | `reset --hard`, `rebase -i`, `push --force-with-lease`, orphanブランチ |
 | [差がつくコマンド](./差がつくコマンド.md) | `reflog`, `cherry-pick`, `bisect`, `blame`, `worktree`, `range-diff`, `clean -n` |
+| [困ったとき](./困ったとき.md) | `status`, `log`, `reflog`, 危険操作の前に確認すること |
 
 ## 迷ったときの早見表
 
 | やりたいこと | まず使うコマンド | 参照 |
 | ------------ | ---------------- | ---- |
 | 今の状態を確認したい | `git status` | [日常操作](./日常操作.md#状態を確認する) |
+| 何をすればいいか分からない | `git status` | [困ったとき](./困ったとき.md) |
 | 差分を確認したい | `git diff` | [日常操作](./日常操作.md#差分を確認する) |
 | ブランチを切り替えたい | `git switch <branch>` | [ブランチ操作](./ブランチ操作.md#ブランチを切り替える) |
 | `origin` の意味を知りたい | `git remote -v` | [日常操作](./日常操作.md#origin-とは) |
