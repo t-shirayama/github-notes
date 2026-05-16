@@ -8,6 +8,7 @@ Gitコマンドを用途別にまとめています。
 | -------- | -------- |
 | [日常操作](./日常操作.md) | `status`, `diff`, `add -p`, `commit`, `origin`, `pull`, `fetch`, `log`, `show` |
 | [ブランチ操作](./ブランチ操作.md) | `switch`, `checkout`, `branch`, バックマージ, `merge`, `rebase`, `stash` |
+| [コンフリクト解消](./コンフリクト解消.md) | `status`, conflict marker, `add`, `merge --abort`, `rebase --continue` |
 | [取り消し操作](./取り消し操作.md) | `restore`, `reset`, `revert`, `commit --amend`, push前後の判断 |
 | [履歴の書き換え](./履歴の書き換え.md) | `reset --hard`, `rebase -i`, `push --force-with-lease`, orphanブランチ |
 | [差がつくコマンド](./差がつくコマンド.md) | `reflog`, `cherry-pick`, `bisect`, `blame`, `worktree`, `range-diff`, `clean -n` |
@@ -23,6 +24,7 @@ Gitコマンドを用途別にまとめています。
 | ブランチを切り替えたい | `git switch <branch>` | [ブランチ操作](./ブランチ操作.md#ブランチを切り替える) |
 | `origin` の意味を知りたい | `git remote -v` | [日常操作](./日常操作.md#origin-とは) |
 | mainの変更を作業ブランチへ取り込みたい | `git merge main` または `git rebase origin/main` | [ブランチ操作](./ブランチ操作.md#バックマージと-rebase-の違い) |
+| コンフリクトを解消したい | `git status` | [コンフリクト解消](./コンフリクト解消.md) |
 | 作業中の変更を一時退避したい | `git stash -u` | [ブランチ操作](./ブランチ操作.md#作業中の変更を一時退避する) |
 | 作業中の修正を一度リセットしたい | `git restore .` または `git reset --hard HEAD` | [取り消し操作](./取り消し操作.md#作業中の修正を一度リセットする) |
 | push前のコミットを取り消したい | `git reset` | [取り消し操作](./取り消し操作.md#push前のコミットを取り消す) |
