@@ -15,7 +15,7 @@
 ```sh
 mkdir git-command-practice-restore-reset
 cd git-command-practice-restore-reset
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -90,4 +90,3 @@ commit前後の取り消し判断に使います。
 
 - [Git公式 git-restore](https://git-scm.com/docs/git-restore)
 - [Git公式 git-reset](https://git-scm.com/docs/git-reset)
-

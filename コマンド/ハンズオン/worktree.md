@@ -15,7 +15,7 @@
 ```sh
 mkdir git-command-practice-worktree
 cd git-command-practice-worktree
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -67,4 +67,3 @@ cd ..
 ## 参考
 
 - [Git公式 git-worktree](https://git-scm.com/docs/git-worktree)
-

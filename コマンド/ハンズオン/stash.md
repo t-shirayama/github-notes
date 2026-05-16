@@ -15,7 +15,7 @@
 ```sh
 mkdir git-command-practice-stash
 cd git-command-practice-stash
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -72,4 +72,3 @@ cd ..
 ## 参考
 
 - [Git公式 git-stash](https://git-scm.com/docs/git-stash)
-

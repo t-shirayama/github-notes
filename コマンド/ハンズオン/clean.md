@@ -15,7 +15,7 @@ Git管理外ファイルの削除対象を、削除前に確認します。
 ```sh
 mkdir git-command-practice-clean
 cd git-command-practice-clean
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -67,4 +67,3 @@ cd ..
 ## 参考
 
 - [Git公式 git-clean](https://git-scm.com/docs/git-clean)
-

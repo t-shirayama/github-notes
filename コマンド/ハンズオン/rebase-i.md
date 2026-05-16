@@ -15,7 +15,7 @@ PRを出す前に、細かすぎるcommitをまとめ、commitメッセージを
 ```sh
 mkdir git-command-practice-rebase-i
 cd git-command-practice-rebase-i
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -81,4 +81,3 @@ PR前にcommit履歴を読みやすく整えたいときに使います。
 ## 参考
 
 - [Git公式 git-rebase](https://git-scm.com/docs/git-rebase)
-

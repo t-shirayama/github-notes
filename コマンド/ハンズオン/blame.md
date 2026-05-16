@@ -15,7 +15,7 @@
 ```sh
 mkdir git-command-practice-blame
 cd git-command-practice-blame
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -71,4 +71,3 @@ cd ..
 
 - [Git公式 git-blame](https://git-scm.com/docs/git-blame)
 - [Git公式 git-show](https://git-scm.com/docs/git-show)
-

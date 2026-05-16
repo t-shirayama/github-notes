@@ -15,7 +15,7 @@
 ```sh
 mkdir git-command-practice-bisect
 cd git-command-practice-bisect
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -91,7 +91,10 @@ git bisect run ./scripts/check.sh
 
 - `good` は正常だったcommit、`bad` は壊れているcommitです。
 - `git bisect run` は、指定したコマンドの終了コードで `good` / `bad` を自動判定します。
-- 終了コード `0` は `good`、失敗の終了コードは `bad` として扱われます。
+- 終了コード `0` は `good` として扱われます。
+- 終了コード `1` から `127` までは、`125` を除いて `bad` として扱われます。
+- 終了コード `125` は、そのcommitでは判定できないものとして `skip` 扱いになります。
+- その他の終了コードは、bisect処理を中止します。
 - 調査が終わったら必ず `git bisect reset` します。
 
 ## 片付け

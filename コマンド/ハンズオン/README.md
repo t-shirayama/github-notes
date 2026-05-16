@@ -9,7 +9,7 @@ Gitコマンドを実際に試すためのシナリオ集です。
 ```sh
 mkdir git-command-practice
 cd git-command-practice
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 ```

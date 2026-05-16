@@ -15,7 +15,7 @@ PRのcommitを整理したあと、意図しない変更が混ざっていない
 ```sh
 mkdir git-command-practice-range-diff
 cd git-command-practice-range-diff
-git init
+git init -b main
 git config user.name "Practice User"
 git config user.email "practice@example.com"
 
@@ -62,4 +62,3 @@ rebase後のPRで「何が変わったか」をcommit単位で確認したいと
 ## 参考
 
 - [Git公式 git-range-diff](https://git-scm.com/docs/git-range-diff)
-
