@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Gitのrebaseとバックマージの違い</title>
+  <desc id="desc">mainの更新をfeatureに取り込むとき、rebaseはfeatureのコミットをmainの先頭へ付け替え、バックマージはmerge commitで履歴を残して取り込む。</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; rx: 14; }
+      .blue { fill: #1565d8; }
+      .green { fill: #10893e; }
+      .orange { fill: #f97316; }
+      .line-blue { stroke: #1565d8; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .line-green { stroke: #10893e; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .line-merge { stroke: #1f2937; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .label { fill: #111827; font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 18px; font-weight: 700; }
+      .small { fill: #374151; font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 15px; font-weight: 600; }
+      .tiny { fill: #475569; font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 13px; }
+      .white { fill: #ffffff; font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 16px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .tag { fill: #ffffff; font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .chip-blue { fill: #dbeafe; stroke: #1565d8; stroke-width: 1; }
+      .chip-green { fill: #dcfce7; stroke: #10893e; stroke-width: 1; }
+      .note { fill: #fffbeb; stroke: #f59e0b; stroke-width: 2; rx: 10; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="960" height="560"/>
+  <text x="480" y="42" text-anchor="middle" class="label" style="font-size:32px;">Gitのrebaseとバックマージの違い</text>
+  <text x="480" y="76" text-anchor="middle" class="small" style="font-size:19px;">mainの更新をfeatureに取り込む2つの方法</text>
+
+  <rect x="170" y="98" width="620" height="112" class="panel"/>
+  <text x="480" y="123" text-anchor="middle" class="small">共通の開始状態</text>
+  <rect x="215" y="141" width="68" height="26" rx="5" class="blue"/>
+  <text x="249" y="154" class="tag">main</text>
+  <path d="M310 154 H700" class="line-blue"/>
+  <circle cx="350" cy="154" r="16" class="blue"/><text x="350" y="154" class="white">A</text>
+  <circle cx="450" cy="154" r="16" class="blue"/><text x="450" y="154" class="white">B</text>
+  <circle cx="560" cy="154" r="16" class="blue"/><text x="560" y="154" class="white">C</text>
+  <circle cx="680" cy="154" r="16" class="blue"/><text x="680" y="154" class="white">D</text>
+  <rect x="215" y="176" width="78" height="26" rx="5" class="green"/>
+  <text x="254" y="189" class="tag">feature</text>
+  <path d="M450 154 C470 176, 490 189, 520 189 H610" class="line-green"/>
+  <circle cx="520" cy="189" r="16" class="green"/><text x="520" y="189" class="white">F1</text>
+  <circle cx="610" cy="189" r="16" class="green"/><text x="610" y="189" class="white">F2</text>
+
+  <rect x="28" y="236" width="430" height="226" class="panel"/>
+  <rect x="28" y="236" width="430" height="44" rx="14" class="blue"/>
+  <text x="243" y="264" text-anchor="middle" class="white" style="font-size:23px;">1. rebase</text>
+  <text x="243" y="306" text-anchor="middle" class="label">featureのコミットをmainの先頭へ付け替える</text>
+  <path d="M84 354 H245" class="line-blue"/>
+  <path d="M132 354 C150 386, 174 398, 202 398 H260" class="line-green"/>
+  <circle cx="114" cy="354" r="14" class="blue"/><text x="114" y="354" class="white">A</text>
+  <circle cx="154" cy="354" r="14" class="blue"/><text x="154" y="354" class="white">B</text>
+  <circle cx="198" cy="354" r="14" class="blue"/><text x="198" y="354" class="white">C</text>
+  <circle cx="240" cy="354" r="14" class="blue"/><text x="240" y="354" class="white">D</text>
+  <circle cx="202" cy="398" r="14" class="green"/><text x="202" y="398" class="white">F1</text>
+  <circle cx="260" cy="398" r="14" class="green"/><text x="260" y="398" class="white">F2</text>
+  <text x="292" y="382" class="label" style="fill:#1565d8;">→</text>
+  <path d="M320 382 H426" class="line-blue"/>
+  <circle cx="334" cy="382" r="13" class="blue"/><text x="334" y="382" class="white">C</text>
+  <circle cx="372" cy="382" r="13" class="blue"/><text x="372" y="382" class="white">D</text>
+  <circle cx="410" cy="382" r="13" class="green"/><text x="410" y="382" class="white">F1'</text>
+  <circle cx="450" cy="382" r="13" class="green"/><text x="450" y="382" class="white">F2'</text>
+  <rect x="58" y="426" width="118" height="28" rx="8" class="chip-blue"/>
+  <text x="117" y="445" text-anchor="middle" class="small" style="fill:#1565d8;">向いている場面</text>
+  <text x="190" y="445" class="small">ローカル作業の整理、PR前</text>
+  <text x="52" y="494" class="tiny">・履歴が一直線で見やすい　・コミットIDが変わる　・共有済みブランチでは注意</text>
+
+  <rect x="502" y="236" width="430" height="226" class="panel"/>
+  <rect x="502" y="236" width="430" height="44" rx="14" class="green"/>
+  <text x="717" y="264" text-anchor="middle" class="white" style="font-size:23px;">2. バックマージ</text>
+  <text x="717" y="306" text-anchor="middle" class="label">mainの変更をmergeでfeatureに取り込む</text>
+  <path d="M558 354 H720" class="line-blue"/>
+  <path d="M606 354 C624 386, 648 398, 676 398 H736" class="line-green"/>
+  <circle cx="588" cy="354" r="14" class="blue"/><text x="588" y="354" class="white">A</text>
+  <circle cx="628" cy="354" r="14" class="blue"/><text x="628" y="354" class="white">B</text>
+  <circle cx="674" cy="354" r="14" class="blue"/><text x="674" y="354" class="white">C</text>
+  <circle cx="716" cy="354" r="14" class="blue"/><text x="716" y="354" class="white">D</text>
+  <circle cx="676" cy="398" r="14" class="green"/><text x="676" y="398" class="white">F1</text>
+  <circle cx="736" cy="398" r="14" class="green"/><text x="736" y="398" class="white">F2</text>
+  <path d="M716 354 L806 398 M736 398 H806" class="line-merge"/>
+  <circle cx="806" cy="398" r="16" class="orange"/><text x="806" y="398" class="white">M</text>
+  <rect x="532" y="426" width="118" height="28" rx="8" class="chip-green"/>
+  <text x="591" y="445" text-anchor="middle" class="small" style="fill:#10893e;">向いている場面</text>
+  <text x="666" y="445" class="small">チーム開発、安全に取り込み</text>
+  <text x="526" y="494" class="tiny">・元の履歴を残す　・merge commitが増える　・共有ブランチでも比較的安全</text>
+
+  <rect x="110" y="506" width="740" height="38" class="note"/>
+  <text x="480" y="531" text-anchor="middle" class="label" style="font-size:19px;">ひとことで言うと: rebaseは履歴を整える方法、バックマージは履歴を残して取り込む方法</text>
+</svg>
