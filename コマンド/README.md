@@ -1,67 +1,29 @@
 # コマンド
 
-## ローカルブランチをまとめて削除 (main以外)
+Gitコマンドを用途別にまとめています。
 
-```sh
-git branch | grep -v "main" | xargs git branch -d
-```
+## 用途別リンク
 
-## mainブランチからfeaturesブランチへ逆マージ
+| ファイル | 主な内容 |
+| -------- | -------- |
+| [日常操作](./日常操作.md) | `status`, `diff`, `add -p`, `commit`, `origin`, `pull`, `fetch`, `log`, `show` |
+| [ブランチ操作](./ブランチ操作.md) | `switch`, `checkout`, `branch`, バックマージ, `merge`, `rebase`, `stash` |
+| [取り消し操作](./取り消し操作.md) | `restore`, `reset`, `revert`, `commit --amend`, push前後の判断 |
+| [履歴の書き換え](./履歴の書き換え.md) | `reset --hard`, `rebase -i`, `push --force-with-lease`, orphanブランチ |
+| [差がつくコマンド](./差がつくコマンド.md) | `reflog`, `cherry-pick`, `bisect`, `blame`, `worktree`, `range-diff`, `clean -n` |
 
-```sh
-git checkout main
-git pull origin main
-git checkout features/xxxxx
-git merge main
-git push origin features/xxxxx
-```
+## 迷ったときの早見表
 
-## 作業中の変更を一時的に退避
-
-```sh
-// 退避した作業の一覧を確認
-git stash list
-
-// 変更を退避する
-git stash -u
-
-// 退避した作業を戻る
-git stash apply 'stash@{0}'
-
-// 退避した作業を消す
-git stash drop 'stash@{0}'
-```
-
-## 過去の履歴をすべて削除
-
-※普通はこんなことしないので個人開発で履歴をきれいにしたいときぐらいに使う
-
-```sh
-git checkout --orphan tmp
-git commit -m "Initial Commit"
-git checkout -B main
-git push -f origin main
-git branch -d tmp
-```
-
-## ブランチ操作
-
-```sh
-// ローカルブランチ一覧（カレントブランチには * が付く）
-git branch
-
-// リモートブランチ一覧
-git branch -r
-
-// 新規ブランチを作成
-git branch <New Branch name>
-
-// 既存ブランチの切替
-git switch <Branch name>
-
-// 新規ブランチを作成して切り替え
-git switch -c <New Branch name>
-
-// ブランチの削除（警告なしは -D を使用）
-git branch -d <Branch name>
-```
+| やりたいこと | まず使うコマンド | 参照 |
+| ------------ | ---------------- | ---- |
+| 今の状態を確認したい | `git status` | [日常操作](./日常操作.md#状態を確認する) |
+| 差分を確認したい | `git diff` | [日常操作](./日常操作.md#差分を確認する) |
+| ブランチを切り替えたい | `git switch <branch>` | [ブランチ操作](./ブランチ操作.md#ブランチを切り替える) |
+| `origin` の意味を知りたい | `git remote -v` | [日常操作](./日常操作.md#origin-とは) |
+| mainの変更を作業ブランチへ取り込みたい | `git merge main` または `git rebase origin/main` | [ブランチ操作](./ブランチ操作.md#バックマージと-rebase-の違い) |
+| 作業中の変更を一時退避したい | `git stash -u` | [ブランチ操作](./ブランチ操作.md#作業中の変更を一時退避する) |
+| 作業中の修正を一度リセットしたい | `git restore .` または `git reset --hard HEAD` | [取り消し操作](./取り消し操作.md#作業中の修正を一度リセットする) |
+| push前のコミットを取り消したい | `git reset` | [取り消し操作](./取り消し操作.md#push前のコミットを取り消す) |
+| push済みの修正を安全に取り消したい | `git revert <commit>` | [取り消し操作](./取り消し操作.md#push済みの修正を安全に取り消す) |
+| push済みの履歴を削除したい | `git reset --hard` + `git push --force-with-lease` | [履歴の書き換え](./履歴の書き換え.md#push済みの修正を履歴ごと削除する) |
+| 消したコミットを探したい | `git reflog` | [差がつくコマンド](./差がつくコマンド.md#reflog-で過去の移動履歴を見る) |
