@@ -9,8 +9,8 @@ Gitコマンドを用途別にまとめています。
 | [日常操作](./日常操作.md) | `status`, `diff`, `add -p`, `commit`, `origin`, `pull`, `fetch`, `log`, `show` |
 | [ブランチ操作](./ブランチ操作.md) | `switch`, `checkout`, `branch`, バックマージ, `merge`, `rebase`, `stash` |
 | [コンフリクト解消](./コンフリクト解消.md) | `status`, conflict marker, `add`, `merge --abort`, `rebase --continue` |
-| [取り消し操作](./取り消し操作.md) | `restore`, `reset`, `revert`, `commit --amend`, push前後の判断 |
-| [履歴の書き換え](./履歴の書き換え.md) | `reset --hard`, `rebase -i`, `push --force-with-lease`, orphanブランチ |
+| [取り消し操作](./取り消し操作.md) | push前後の判断表、安全な戻し方、`restore`, `revert`, `commit --amend` |
+| [履歴の書き換え](./履歴の書き換え.md) | 危険操作の詳細、`reset --hard`, `rebase -i`, `push --force-with-lease` |
 | [差がつくコマンド](./差がつくコマンド.md) | `reflog`, `cherry-pick`, `bisect`, `blame`, `worktree`, `range-diff`, `clean -n` |
 | [ハンズオン](./ハンズオン/README.md) | 練習用リポジトリで試すシナリオ集 |
 | [困ったとき](./困ったとき.md) | `status`, `log`, `reflog`, 危険操作の前に確認すること |
