@@ -63,3 +63,8 @@ Closes #123
 ## 探し方
 
 Issueが増えてきたら、[GitHubでよく使う検索](./GitHubでよく使う検索.md) の `is:issue`、`label:`、`milestone:` を使って探します。
+
+## 関連
+
+- [Pull Request運用](./Pull%20Request/README.md)
+- [GitHubでよく使う検索](./GitHubでよく使う検索.md)
