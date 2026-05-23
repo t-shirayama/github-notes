@@ -6,6 +6,7 @@ GitHub Actions の設定、CI/CD、セキュリティ、運用まわりのメモ
 
 - [GitHub Actions の概要と基本の使い方](00_GitHubActionsの概要と基本の使い方/README.md)
 - [Webアプリ開発 GitHub Actions おすすめ設定](01_Webアプリ開発おすすめ設定/README.md)
+- [GitHub Actions トラブルシュート](トラブルシュート/README.md)
 
 ## 使いどころ
 
@@ -18,7 +19,8 @@ GitHub Actions の設定、CI/CD、セキュリティ、運用まわりのメモ
 
 1. GitHub Actions の基本を知りたい場合は [GitHub Actions の概要と基本の使い方](00_GitHubActionsの概要と基本の使い方/README.md) を読む。
 2. Web アプリに最低限の CI を入れたい場合は [Webアプリ開発 GitHub Actions おすすめ設定](01_Webアプリ開発おすすめ設定/README.md) の「まず入れる最小セット」まで読む。
-3. 運用前に `permissions`、Dependabot、Actions SHA 固定、OIDC などのセキュリティ設定を確認する。
+3. CIが落ちた場合は [GitHub Actions トラブルシュート](トラブルシュート/README.md) で確認する。
+4. 運用前に `permissions`、Dependabot、Actions SHA 固定、OIDC などのセキュリティ設定を確認する。
 
 ## 注意点
 
